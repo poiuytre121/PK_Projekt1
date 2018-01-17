@@ -5,6 +5,10 @@ def get_subjects_names():
     """
     try:
         file_handler = open('config/subjects.csv', 'r')
-        return [i for i in file_handler]
+        subjects = {}
+        # removing duplicates
+        for i in file_handler:
+            subjects[i] = i
+        return [i for i in subjects.values()]
     except IOError:
         raise FileNotFoundError("Błąd odczytu pliku przedmiotów. Sprawdź czy w folderze config znajduje się plik subjects.csv")
