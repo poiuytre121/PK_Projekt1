@@ -34,7 +34,6 @@ class MainWindow(object):
         # subject labels and grade input fields
         self.selectsStudentGrades = []
         row = 0
-        # TODO: change method which is used to add subject fields
         for subject_name in get_subjects_names():
             label = Label()
             label['text'] = subject_name
